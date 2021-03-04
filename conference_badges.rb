@@ -30,8 +30,11 @@ end
 # Create a method called printer that will output first the results of the 
 # batch_badge_creator method and then of the assign_rooms method to the screen.
 
-def printer
-    speaker_lineup = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
-    puts batch_badge_creator
-    assign_rooms.map { |speaker_room| puts speaker_room}
+def printer(speakers)
+    batch_badge_creator(speakers).each do |badge|
+        puts badge
+    end
+    assign_rooms(speakers).each do |assignment|
+        puts assignment
+    end
 end
